@@ -1,4 +1,86 @@
+# OS junk
+.DS_Store
+Thumbs.db
 
+# Editors/IDE
+.vscode/
+.idea/
+.vs/
+*.swp
+*.swo
+
+# Node / VS Code extension artifacts
+node_modules/
+src/node_modules/
+dist/
+coverage/
+.nyc_output/
+.cache/
+.tmp/
+.eslintcache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+*.vsix
+
+# CMake and build outputs
+build/
+build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+Makefile2
+*.dir/
+*.obj
+*.obj.d
+*.o
+*.a
+*.lo
+*.la
+*.lib
+*.dll
+*.so
+*.dylib
+*.exe
+*.out
+*.app
+*.pdb
+*.ilk
+*.idb
+*.exp
+*.manifest
+*.rsp
+*.pch
+
+# Profiling/coverage from native builds
+*.gcno
+*.gcda
+*.profraw
+*.profdata
+
+# Python byproducts
+__pycache__/
+*.pyc
+*.pyo
+
+# Java byproducts
+*.class
+*.jar
+*.war
+
+# Backups and temp files
+*.bak
+*.tmp
+*.old
+*~
+*.orig
+
+# Vault secrets
+.vault/var.vc
+var.vc
 build/
 dist/
 *.log
@@ -10,6 +92,10 @@ node_modules/
 *.swp
 coverage/
 src/node_modules/
+
+build-mingw/
+build-mingw-debug/
+build-mingw-release/
 
 
 *.bak

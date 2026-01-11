@@ -58,3 +58,4 @@ code --install-extension *.vsix
 ## Notes
 - Archives are HMAC-checked with your token/master key; mismatches fail fast.
 - Optional vaults can be materialized with runtime flags; experimental surface may change.
+
