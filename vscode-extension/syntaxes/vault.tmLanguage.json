@@ -1,0 +1,100 @@
+{
+  "name": "Vault DSL",
+  "scopeName": "source.vault",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#booleans" },
+    { "include": "#hex" },
+    { "include": "#entities" },
+    { "include": "#keywords" },
+    { "include": "#operators" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.number-sign.vault", "match": "^\\s*#.*$" }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.vault",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            { "name": "constant.character.escape.vault", "match": "\\\\." }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.vault", "match": "-?\\b\\d+(?:\\.\\d+)?\\b" }
+      ]
+    },
+    "booleans": {
+      "patterns": [
+        { "name": "constant.language.boolean.vault", "match": "\\b(true|false)\\b" }
+      ]
+    },
+    "hex": {
+      "patterns": [
+        { "name": "constant.numeric.hex.vault", "match": "\\b[0-9a-fA-F]{32,}\\b" }
+      ]
+    },
+    "entities": {
+      "patterns": [
+        {
+          "name": "meta.registry.vault",
+          "match": "^(\\s*)(registry)(\\s+)([A-Za-z_][\\w-]*)",
+          "captures": {
+            "2": { "name": "keyword.control.vault" },
+            "4": { "name": "entity.name.type.vault" }
+          }
+        },
+        {
+          "name": "meta.store.vault",
+          "match": "\\b(store|replace)(\\s+)([A-Za-z_][\\w-]*)",
+          "captures": {
+            "1": { "name": "keyword.control.vault" },
+            "3": { "name": "variable.other.readwrite.vault" }
+          }
+        },
+        {
+          "name": "meta.if.vault",
+          "match": "^(\\s*)(if)(\\s+)(missing|present)(\\s+)([A-Za-z_][\\w-]*)?",
+          "captures": {
+            "2": { "name": "keyword.control.vault" },
+            "4": { "name": "keyword.control.vault" },
+            "6": { "name": "variable.other.readwrite.vault" }
+          }
+        },
+        {
+          "name": "meta.depends.vault",
+          "match": "^(\\s*)(depends)(\\s+)(.+)$",
+          "captures": {
+            "2": { "name": "keyword.control.vault" },
+            "4": { "name": "string.unquoted.vault" }
+          }
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        { "name": "keyword.control.vault", "match": "\\b(vault\\?|vault|registry|store|replace|secure|optional|required|sealed|if|missing|present|note|for|in|log|document|find|matching|depends)\\b" },
+        { "name": "support.function.builtin.vault", "match": "\\b(generate|now)\\b" },
+        { "name": "keyword.declaration.vault", "match": "\\b(entry|token|digest|cipher|hmac)\\b" }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        { "name": "keyword.operator.vault", "match": "->|::" },
+        { "name": "punctuation.separator.key-value.vault", "match": ":" },
+        { "name": "punctuation.definition.bracket.curly.vault", "match": "[{}]" },
+        { "name": "punctuation.definition.bracket.square.vault", "match": "[\\[\\]]" }
+      ]
+    }
+  }
+}

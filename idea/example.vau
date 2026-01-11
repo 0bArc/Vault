@@ -1,0 +1,16 @@
+vault session
+  registry user
+  if missing user -> "id"
+    store user -> "id" = generate()
+    note "assigned user id"
+  if present user -> "id"
+    replace user -> "seen_at" = now()
+    note "updated last seen"
+  secure
+
+vault? cache
+  registry session
+  if missing session -> "token"
+    store session -> "token" = generate()
+    note "issued cache token"
+  secure

@@ -1,0 +1,9 @@
+# Vault Secure Archive
+vault demo (required)
+sealed true
+  registry name
+    entry key
+      digest f605db085067e01d55115d0fe4a65fa337fd24cdb8c5bec690e449858f63ba4b
+      cipher h8E78UngyP4Rdl9FY3+sWwqiZ22nzpfDt9qxB1y7YmeX
+---
+hmac a793cdd3b1223202d9ba0abf1bee3819d50c99e51e3945daea2fe164ffa53d7a

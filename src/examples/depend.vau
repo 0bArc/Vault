@@ -1,0 +1,9 @@
+vault depend
+  registry base
+  if missing base -> "seed"
+    store base -> "seed" = generate()
+    note "seeded dependency value"
+  if present base -> "seed"
+    replace base -> "touched_at" = now()
+    note "refreshed dependency timestamp"
+  secure

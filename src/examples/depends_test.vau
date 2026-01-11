@@ -1,0 +1,9 @@
+vault dependent
+  registry demo
+  if missing demo -> "id"
+    store demo -> "id" = generate()
+    note "issued dependent id"
+  if present demo -> "id"
+    replace demo -> "refreshed_at" = now()
+    note "refreshed dependent id timestamp"
+  secure

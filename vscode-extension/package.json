@@ -1,0 +1,67 @@
+{
+  "name": "vault-language-support",
+  "displayName": "Vault DSL Support",
+  "description": "Syntax highlighting and completions for Vault .vau/.svau/.vsc files.",
+  "version": "0.0.6",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:vault",
+    "onCommand:vault.run",
+    "onCommand:vault.openPanel"
+  ],
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "Vault",
+      "properties": {
+        "vault.binaryPath": {
+          "type": "string",
+          "default": "build-mingw-debug/vault.exe",
+          "description": "Path to the vault executable used to run or inspect Vault archives. Relative paths are resolved from the workspace root."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "vault.run",
+        "title": "Vault: Run/Inspect File",
+        "category": "Vault"
+      },
+      {
+        "command": "vault.openPanel",
+        "title": "Vault: Open Run Panel",
+        "category": "Vault"
+      }
+    ],
+    "languages": [
+      {
+        "id": "vault",
+        "aliases": ["Vault DSL", "vault"],
+        "extensions": [".vau", ".svau", ".vsc"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "vault",
+        "scopeName": "source.vault",
+        "path": "./syntaxes/vault.tmLanguage.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://example.com/placeholder.git"
+  },
+  "bugs": {
+    "url": "https://example.com/placeholder/issues"
+  },
+  "keywords": ["vault", "vau", "svau", "vsc", "crypto", "dsl"],
+  "license": "MIT"
+}

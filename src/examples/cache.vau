@@ -1,0 +1,9 @@
+vault cache
+  registry session
+  if missing session -> "token"
+    store session -> "token" = generate()
+    note "issued cache token"
+  if present session -> "token"
+    replace session -> "refreshed_at" = now()
+    note "refreshed cache token timestamp"
+  secure

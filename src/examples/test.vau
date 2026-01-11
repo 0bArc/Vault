@@ -1,0 +1,5 @@
+vault demo
+  registry name
+  if missing -> "key"
+    store -> "key" = "value"
+  secure

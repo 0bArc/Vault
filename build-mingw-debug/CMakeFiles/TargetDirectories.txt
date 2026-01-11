@@ -1,0 +1,5 @@
+C:/Users/sandk/desktop/vault/build-mingw-debug/CMakeFiles/vaultc.dir
+C:/Users/sandk/desktop/vault/build-mingw-debug/CMakeFiles/vaultdepend.dir
+C:/Users/sandk/desktop/vault/build-mingw-debug/CMakeFiles/vault.dir
+C:/Users/sandk/desktop/vault/build-mingw-debug/CMakeFiles/edit_cache.dir
+C:/Users/sandk/desktop/vault/build-mingw-debug/CMakeFiles/rebuild_cache.dir
